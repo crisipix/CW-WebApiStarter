@@ -9,6 +9,9 @@ namespace WebExample
     {
         public static void Register(HttpConfiguration config)
         {
+            //Start up logging
+            log4net.Config.XmlConfigurator.Configure();
+
             // Web API configuration and services
 
             // Web API routes
