@@ -7,10 +7,23 @@ namespace WebExample.Services.Account
 {
     public class AccountService : IAccountService
     {
-        public AccountService() { }
+
+        private IDictionary<int, string> Accounts;      
+        
+        public AccountService() {
+            var accounts = new string[] { "A", "B", "C" };
+            Accounts = accounts.Select((x, y) => new { Key = y, Value = x })
+                                .GroupBy(x => x.Key)
+                                .ToDictionary(x => x.Key, y => y.First()?.Value);
+        }
         public IEnumerable<string> GetAccounts() {
-            //return Enumerable.Empty<string>();
-            return new List<string> { "A", "B", "C" };
+            return Accounts.Values;
+        }
+
+        public string GetAccountById(int id) {
+            string value;
+            if (Accounts.TryGetValue(id, out value)) { return value; }
+            return string.Empty;
         }
     }
 }

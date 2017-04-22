@@ -20,7 +20,6 @@ namespace WebExample.Controllers
             _service = service;
         }
 
-
         [HttpGet]
         [Route("")]
         public async Task<IEnumerable<string>> GetAccounts()
@@ -30,11 +29,11 @@ namespace WebExample.Controllers
         }
 
         [HttpGet]
-        [Route("FirstAccount")]
-        public async Task<string> GetAccount()
+        [Route("Id")]
+        public async Task<string> GetAccount(int id)
         {
-            Log.Debug("GET First Account");
-            return await Task.Run(() => { return "Test"; });
+            Log.Debug("GET Account by id");
+            return await Task.Run(() => {return _service.GetAccountById(id); });
         }
 
 

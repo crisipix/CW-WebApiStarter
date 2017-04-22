@@ -9,5 +9,6 @@ namespace WebExample.Services.Account
     public interface IAccountService
     {
         IEnumerable<string> GetAccounts();
+        string GetAccountById(int id);
     }
 }

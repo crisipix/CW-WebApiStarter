@@ -11,16 +11,20 @@ namespace WebExample
     
     public class WebApiApplication : System.Web.HttpApplication
     {
+        /*
+         Swagger auto registers
+             */
         protected void Application_Start()
         {
+            AutoMapperConfig.Configure();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             DIServiceConfig.Register();
 
             //SwaggerConfig.Register(GlobalConfiguration.Configuration);
             /*
              httpConfiguration
-     .EnableSwagger(c => c.SingleApiVersion("v1", "A title for your API"))
-     .EnableSwaggerUi();
+             .EnableSwagger(c => c.SingleApiVersion("v1", "A title for your API"))
+             .EnableSwaggerUi();
              */
         }
     }
