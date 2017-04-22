@@ -32,10 +32,19 @@ namespace WebExample.Services.Person
         }
 
         public PersonModel InsertPerson(PersonModel person) {
-            var personDo = new PersonDo { Id = person.Id, Name = person.Name, Age = person.Age };
+            var personDo =  Mapper.Map<PersonModel, PersonDo>(person);
             personDo =  _repository.Insert(personDo);
             return Mapper.Map<PersonDo, PersonModel>(personDo);
         }
-        
+
+        public PersonModel UpdatePerson(PersonModel person) {
+            var personDo = Mapper.Map<PersonModel, PersonDo>(person);
+
+            personDo = _repository.Update(personDo);
+
+            return Mapper.Map<PersonDo, PersonModel>(personDo);
+        }
+
+
     }
 }

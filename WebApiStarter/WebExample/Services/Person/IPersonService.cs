@@ -13,5 +13,6 @@ namespace WebExample.Services.Person
         PersonModel GetPersonById(int id);
 
         PersonModel InsertPerson(PersonModel person);
+        PersonModel UpdatePerson(PersonModel person);
     }
 }

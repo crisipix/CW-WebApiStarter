@@ -47,5 +47,14 @@ namespace WebExample.Controllers
 
             return await Task.Run(() => _service.InsertPerson(person));
         }
+
+        [HttpPost]
+        [Route("Update")]
+        public async Task<PersonModel> UpdatePerson(PersonModel person)
+        {
+            Log.Debug("Update Person");
+
+            return await Task.Run(() => _service.UpdatePerson(person));
+        }
     }
 }
