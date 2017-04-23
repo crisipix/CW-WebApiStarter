@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
+using WebExample.Models;
 using WebExample.Services.Account;
 
 namespace WebExample.Controllers
@@ -22,7 +23,7 @@ namespace WebExample.Controllers
 
         [HttpGet]
         [Route("")]
-        public async Task<IEnumerable<string>> GetAccounts()
+        public async Task<IEnumerable<AccountModel>> GetAccounts()
         {
             Log.Debug("GET Accounts");
             return await Task.Run(() =>_service.GetAccounts());
@@ -30,12 +31,38 @@ namespace WebExample.Controllers
 
         [HttpGet]
         [Route("Id")]
-        public async Task<string> GetAccount(int id)
+        public async Task<AccountModel> GetAccount(int id)
         {
             Log.Debug("GET Account by id");
             return await Task.Run(() => {return _service.GetAccountById(id); });
         }
 
+
+        [HttpPost]
+        [Route("Insert")]
+        public async Task<AccountModel> InsertPerson(AccountModel person)
+        {
+            Log.Debug("Insert Person");
+
+            return await Task.Run(() => _service.InsertAccount(person));
+        }
+
+        [HttpPost]
+        [Route("Update")]
+        public async Task<AccountModel> UpdatePerson(AccountModel person)
+        {
+            Log.Debug("Update Person");
+
+            return await Task.Run(() => _service.UpdateAccount(person));
+        }
+
+        [HttpDelete]
+        public async Task<bool> UpdatePerson(int Id)
+        {
+            Log.Debug("Delete Person");
+
+            return await Task.Run(() => _service.DeleteAccount(Id));
+        }
 
     }
 }

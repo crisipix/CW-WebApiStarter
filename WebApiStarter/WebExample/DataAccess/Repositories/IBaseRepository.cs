@@ -12,6 +12,6 @@ namespace WebExample.DataAccess.Repositories
         TEntity Get(int Id);
         TEntity Insert(TEntity entity);
         TEntity Update(TEntity entity);
-        bool Delete(TEntity entity);
+        bool Delete(int id);
     }
 }

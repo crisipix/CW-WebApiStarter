@@ -54,13 +54,28 @@ namespace WebExample.DataAccess.Repositories
                 string sqlQuery = @"UPDATE p SET p.Name = @Name, p.Age = @Age FROM [dbo].[Person] p WHERE p.Id = @Id
                                     SELECT Id, Name, Age FROM [dbo].[Person] where Id =@Id";
                 var result = db.Query<PersonDo>(sqlQuery, p).FirstOrDefault();
-                return result;
-                //int rowsAffected = db.Execute(sqlQuery, p);
-
-                // return rowsAffected;
+                return result;               
 
             }
 
+        }
+
+        public override bool Delete(int Id)
+        {
+            try {
+                using (IDbConnection db = new SqlConnection(ConnectionString))
+                {
+
+                    string sqlQuery = @"DELETE p FROM [dbo].[Person] p WHERE p.Id = @Id";
+                    db.Execute(sqlQuery, new { Id });
+                    return true;
+                }
+            }
+            catch (Exception e)
+            {
+                Log.Error(e);
+                return false;
+            }
         }
     }
 }

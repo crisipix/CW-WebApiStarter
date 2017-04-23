@@ -56,5 +56,13 @@ namespace WebExample.Controllers
 
             return await Task.Run(() => _service.UpdatePerson(person));
         }
+
+        [HttpDelete]
+        public async Task<bool> UpdatePerson(int Id)
+        {
+            Log.Debug("Delete Person");
+
+            return await Task.Run(() => _service.DeletePerson(Id));
+        }
     }
 }

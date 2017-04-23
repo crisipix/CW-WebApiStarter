@@ -45,6 +45,12 @@ namespace WebExample.Services.Person
             return Mapper.Map<PersonDo, PersonModel>(personDo);
         }
 
+        public bool DeletePerson(int Id)
+        {
+            return _repository.Delete(Id);
+        }
+
+
 
     }
 }

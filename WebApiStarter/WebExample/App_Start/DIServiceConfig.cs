@@ -37,6 +37,7 @@ namespace WebExample.App_Start
             builder.RegisterGeneric(typeof(BaseRepository<>)).As(typeof(IBaseRepository<>)).InstancePerDependency();
             //builder.RegisterGeneric(typeof(BaseRepository<>)).AsSelf();
             builder.RegisterType<PersonRepository>().As<BaseRepository<PersonDo>>();
+            builder.RegisterType<AccountRepository>().As<BaseRepository<AccountDo>>();
 
 
 

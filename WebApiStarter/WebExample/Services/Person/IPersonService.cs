@@ -14,5 +14,7 @@ namespace WebExample.Services.Person
 
         PersonModel InsertPerson(PersonModel person);
         PersonModel UpdatePerson(PersonModel person);
+
+        bool DeletePerson(int Id);
     }
 }

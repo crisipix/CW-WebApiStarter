@@ -31,7 +31,7 @@ namespace WebExample.DataAccess.Repositories
             throw new NotImplementedException();
         }
 
-        public virtual bool Delete(TEntity entity)
+        public virtual bool Delete(int Id)
         {
             throw new NotImplementedException();
         }
