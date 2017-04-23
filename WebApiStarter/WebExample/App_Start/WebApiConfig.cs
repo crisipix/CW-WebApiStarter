@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using WebExample.Common.Exceptions;
 
 namespace WebExample
 {
@@ -22,6 +23,9 @@ namespace WebExample
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            // Elmah Filters
+            config.Filters.Add(new ElmahHandleWebApiErrorAttribute());
         }
     }
 }
