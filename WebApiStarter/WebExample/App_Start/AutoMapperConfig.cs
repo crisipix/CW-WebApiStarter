@@ -3,14 +3,18 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using WebExample.DataAccess.Dos;
-using WebExample.Models;
+using WebExample.DataAccess.Repositories.Dos;
+using WebExample.DataAccess.Models;
 
 namespace WebExample.App_Start
 {
     
     public class AutoMapperConfig
     {
+        /// <summary>
+        /// Not used anymore, if you are going to use DI use the Automapper Module to 
+        /// load into AutoFac
+        /// </summary>
         public static void Configure()
         {
             Mapper.Initialize((config) =>

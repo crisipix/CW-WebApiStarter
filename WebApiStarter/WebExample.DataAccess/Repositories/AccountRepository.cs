@@ -6,20 +6,23 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
-using WebExample.DataAccess.Dos;
+using WebExample.DataAccess.Repositories.Dos;
 
 namespace WebExample.DataAccess.Repositories
 {
 
     public class AccountRepository : BaseRepository<AccountDo>
     {
-        private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        public AccountRepository()
+        // private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private readonly ILog _log;
+        public AccountRepository(ILog log)
         {
-                
+            _log = log;
         }
         public override IEnumerable<AccountDo> GetAll()
         {
+            _log.Debug("GET Accounts From DB");
+
             using (IDbConnection db = new SqlConnection(ConnectionString))
             {
                 return db.Query<AccountDo>("SELECT * FROM[dbo].[Account]").ToList();
@@ -71,7 +74,7 @@ namespace WebExample.DataAccess.Repositories
             }
             catch (Exception e)
             {
-                Log.Error(e);
+                _log.Error(e);
                 return false;
             }
         }

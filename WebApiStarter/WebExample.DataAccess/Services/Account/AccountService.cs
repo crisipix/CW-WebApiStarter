@@ -3,20 +3,22 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using WebExample.DataAccess.Dos;
+using WebExample.DataAccess.Repositories.Dos;
 using WebExample.DataAccess.Repositories;
-using WebExample.Models;
+using WebExample.DataAccess.Models;
 
-namespace WebExample.Services.Account
+namespace WebExample.DataAccess.Services.Account
 {
     public class AccountService : IAccountService
     {
-
-        private IDictionary<int, string> Accounts;
+        private readonly IMapper _mapper;
         private BaseRepository<AccountDo> _acctRepository;
         private BaseRepository<PersonDo> _personRepository;
-        public AccountService(BaseRepository<AccountDo> repository,
+        public AccountService(
+            IMapper mapper,
+            BaseRepository<AccountDo> repository,
             BaseRepository<PersonDo> personRepository) {
+            _mapper = mapper;
             _acctRepository = repository;
             _personRepository =  personRepository;
            
@@ -32,20 +34,17 @@ namespace WebExample.Services.Account
 
         public AccountModel InsertAccount(AccountModel account)
         {
-            var accountDo = Mapper.Map<AccountModel, AccountDo>(account);
+            var accountDo = _mapper.Map<AccountModel, AccountDo>(account);
             accountDo = _acctRepository.Insert(accountDo);
-            //return Mapper.Map<AccountDo, AccountModel>(accountDo);
 
             return MapAccountOwners(new List<AccountDo> { accountDo }).FirstOrDefault();
         }
 
         public AccountModel UpdateAccount(AccountModel account)
         {
-            var accountDo = Mapper.Map<AccountModel, AccountDo>(account);
+            var accountDo = _mapper.Map<AccountModel, AccountDo>(account);
 
             accountDo = _acctRepository.Update(accountDo);
-
-            //return Mapper.Map<AccountDo, AccountModel>(accountDo);
 
             return MapAccountOwners(new List<AccountDo> { accountDo }).FirstOrDefault();
 
@@ -59,13 +58,12 @@ namespace WebExample.Services.Account
         private IEnumerable<AccountModel> MapAccountOwners(IEnumerable<AccountDo> accountDos)
         {
             var accountModels = new List<AccountModel>();
-            var personModels = Mapper.Map<IEnumerable<PersonDo>, IEnumerable<PersonModel>>(_personRepository.GetAll());
+            var personModels = _mapper.Map<IEnumerable<PersonDo>, IEnumerable<PersonModel>>(_personRepository.GetAll());
             var personCache = personModels.ToDictionary(x => x.Id, y => y);
 
             foreach (var accountDo in accountDos)
             {
-                var accountModel = Mapper.Map<AccountDo, AccountModel>(accountDo);
-                //var person = Mapper.Map<PersonDo, PersonModel>(_personRepository.Get(accountDo.OwnerId));
+                var accountModel = _mapper.Map<AccountDo, AccountModel>(accountDo);
                 accountModel.Owner = personCache[accountDo.OwnerId];
                 accountModels.Add(accountModel);
             }

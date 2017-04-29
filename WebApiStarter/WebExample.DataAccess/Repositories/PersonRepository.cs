@@ -6,16 +6,17 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
-using WebExample.DataAccess.Dos;
+using WebExample.DataAccess.Repositories.Dos;
 
 namespace WebExample.DataAccess.Repositories
 {
     public class PersonRepository : BaseRepository<PersonDo>
     {
-        private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-
-        public PersonRepository()
+        //private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private readonly ILog _log;
+        public PersonRepository(ILog log)
         {
+            _log = log;
         }
 
         public override IEnumerable<PersonDo> GetAll()
@@ -73,7 +74,7 @@ namespace WebExample.DataAccess.Repositories
             }
             catch (Exception e)
             {
-                Log.Error(e);
+                _log.Error(e);
                 return false;
             }
         }

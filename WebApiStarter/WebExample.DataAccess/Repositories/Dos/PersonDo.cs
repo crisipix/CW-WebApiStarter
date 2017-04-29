@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace WebExample.DataAccess.Dos
+namespace WebExample.DataAccess.Repositories.Dos
 {
     public class PersonDo
     {

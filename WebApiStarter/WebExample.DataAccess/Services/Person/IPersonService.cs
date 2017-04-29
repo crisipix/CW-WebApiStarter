@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WebExample.Models;
+using WebExample.DataAccess.Models;
 
-namespace WebExample.Services.Person
+namespace WebExample.DataAccess.Services.Person
 {
     public interface IPersonService
     {

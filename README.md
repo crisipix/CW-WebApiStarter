@@ -22,3 +22,4 @@
 * [Lof4Net Setup](http://devthings.com.ua/implementing-logging-for-asp-net-web-api-with-log4net/)
 * [Elmah Site](http://elmah.github.io/downloads/)
 * [Elmah SQL server ](http://www.andyfrench.info/2014/07/configuring-elmah-to-use-sql-server.html)
+* [Elmah Securing Error Log Pages](https://elmah.github.io/a/securing-error-log-pages/)

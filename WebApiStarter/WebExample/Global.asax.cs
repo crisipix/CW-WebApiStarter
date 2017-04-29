@@ -16,7 +16,7 @@ namespace WebExample
              */
         protected void Application_Start()
         {
-            AutoMapperConfig.Configure();
+           // AutoMapperConfig.Configure();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             DIServiceConfig.Register();
 

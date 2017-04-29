@@ -5,27 +5,30 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
-using WebExample.Models;
-using WebExample.Services.Person;
+using WebExample.DataAccess.Models;
+using WebExample.DataAccess.Services.Person;
 
 namespace WebExample.Controllers
 {
     [RoutePrefix("api/Person")]
     public class PersonController : ApiController
     {
-        private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        //private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private readonly ILog _log;
 
         private readonly IPersonService _service;
 
-        public PersonController(IPersonService service) {
+        public PersonController(IPersonService service,
+            ILog log) {
             _service = service;
+            _log = log;
         }
 
         [HttpGet]
         [Route("")]
         public async Task<IEnumerable<PersonModel>> GetPeople()
         {
-            Log.Debug("Get Person");
+            _log.Debug("Get Person");
 
             return await Task.Run(() =>  _service.GetPeople());
         }
@@ -34,7 +37,7 @@ namespace WebExample.Controllers
         [Route("Id")]
         public async Task<PersonModel> GetPersonById(int Id)
         {
-            Log.Debug("Get Person");
+            _log.Debug("Get Person");
 
             return await Task.Run(() => _service.GetPersonById(Id));
         }
@@ -43,7 +46,7 @@ namespace WebExample.Controllers
         [Route("Insert")]
         public async Task<PersonModel> InsertPerson(PersonModel person)
         {
-            Log.Debug("Insert Person");
+            _log.Debug("Insert Person");
 
             return await Task.Run(() => _service.InsertPerson(person));
         }
@@ -52,7 +55,7 @@ namespace WebExample.Controllers
         [Route("Update")]
         public async Task<PersonModel> UpdatePerson(PersonModel person)
         {
-            Log.Debug("Update Person");
+            _log.Debug("Update Person");
 
             return await Task.Run(() => _service.UpdatePerson(person));
         }
@@ -60,7 +63,7 @@ namespace WebExample.Controllers
         [HttpDelete]
         public async Task<bool> UpdatePerson(int Id)
         {
-            Log.Debug("Delete Person");
+            _log.Debug("Delete Person");
 
             return await Task.Run(() => _service.DeletePerson(Id));
         }

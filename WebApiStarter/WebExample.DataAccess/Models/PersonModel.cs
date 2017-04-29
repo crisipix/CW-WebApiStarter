@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace WebExample.Models
+namespace WebExample.DataAccess.Models
 {
     public class PersonModel
     {
