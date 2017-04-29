@@ -41,5 +41,24 @@ namespace WebExample.DataAccess.Common
             var jsonString = await client.GetJsonAsync(url);
             return JsonConvert.DeserializeObject<T>(jsonString);
         }
+
+        public static async Task<string> PostJsonAsync(this HttpClient client, string url, Object postObject) {
+            var content = new StringContent(JObject.FromObject(postObject).ToString(), Encoding.UTF8, "application/json");
+            HttpResponseMessage response = await client.PostAsync(url, content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var jsonString = await response.Content.ReadAsStringAsync();
+                return jsonString;
+            }
+            response.EnsureSuccessStatusCode();
+            return string.Empty;
+        }
+
+        public static async Task<T> PostGenericAsync<T>(this HttpClient client, string url, T postObject)
+        {
+            var jsonString = await PostJsonAsync(client, url, postObject);
+            return JsonConvert.DeserializeObject<T>(jsonString);
+        }
     }
 }

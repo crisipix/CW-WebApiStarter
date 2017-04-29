@@ -9,6 +9,6 @@ namespace WebExample.DataAccess.Common
 {
     public interface IHttpClientProvider
     {
-        HttpClient ProvideClient(string url, bool useWindowsAuth);
+        HttpClient ProvideClient(string baseUrl, bool useWindowsAuth);
     }
 }

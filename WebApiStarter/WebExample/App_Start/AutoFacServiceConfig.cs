@@ -9,6 +9,7 @@ using WebExample.DataAccess.Services.Account;
 using WebExample.DataAccess.Services.Person;
 using WebExample.Common.DIModules;
 using WebExample.DataAccess.Common;
+using WebExample.DataAccess.Services.Post;
 
 namespace WebExample.App_Start
 {
@@ -20,6 +21,8 @@ namespace WebExample.App_Start
             // via its interface:
             builder.RegisterType<AccountService>().As<IAccountService>();
             builder.RegisterType<PersonService>().As<IPersonService>();
+            builder.RegisterType<PostService>().As<IPostService>();
+            
             builder.RegisterGeneric(typeof(BaseRepository<>)).As(typeof(IBaseRepository<>)).InstancePerDependency();
 
             //builder.RegisterGeneric(typeof(BaseRepository<>)).AsSelf();
@@ -30,9 +33,8 @@ namespace WebExample.App_Start
             builder.RegisterModule(new LoggingModule());
             builder.RegisterModule(new AutoMapperModule());
 
-            //
+            // Provider
             builder.RegisterType<HttpClientProvider>().As<IHttpClientProvider>();
-            
             
             //builder.RegisterType<PersonRepository>().As<IBaseRepository>();
             // However, if you want BOTH services (not as common)
