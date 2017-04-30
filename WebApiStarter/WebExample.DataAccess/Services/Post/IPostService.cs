@@ -14,8 +14,8 @@ namespace WebExample.DataAccess.Services.Post
         Task<PostModel> GetPostById(int id);
 
         Task<PostModel> InsertPost(PostModel post);
-        PostModel UpdatePost(PostModel post);
+        Task<PostModel> UpdatePost(PostModel post);
 
-        bool DeletePost(int Id);
+        Task<bool> DeletePost(int Id);
     }
 }

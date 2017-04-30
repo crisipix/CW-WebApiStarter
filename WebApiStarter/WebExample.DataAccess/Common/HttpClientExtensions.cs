@@ -60,5 +60,18 @@ namespace WebExample.DataAccess.Common
             var jsonString = await PostJsonAsync(client, url, postObject);
             return JsonConvert.DeserializeObject<T>(jsonString);
         }
+
+        public static async Task<bool> DeleteJsonAsync(this HttpClient client, string url)
+        {
+            HttpResponseMessage response = await client.DeleteAsync(url);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var jsonString = await response.Content.ReadAsStringAsync();
+                return true;
+            }
+            response.EnsureSuccessStatusCode();
+            return false;
+        }
     }
 }

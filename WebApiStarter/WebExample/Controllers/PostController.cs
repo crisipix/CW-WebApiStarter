@@ -44,11 +44,29 @@ namespace WebExample.Controllers
         }
 
         [HttpPost]
+        [Route("Insert")]
         public async Task<PostModel> InsertPost(PostModel post)
         {
             _log.Debug("Insert Post");
 
             return await _service.InsertPost(post);
+        }
+
+        [HttpPost]
+        [Route("Update")]
+        public async Task<PostModel> UpdatePost(PostModel post)
+        {
+            _log.Debug("Update Post");
+
+            return await _service.UpdatePost(post);
+        }
+
+        [HttpDelete]
+        public async Task<bool> DeletePost(PostModel post)
+        {
+            _log.Debug("Update Post");
+
+            return await _service.DeletePost(post.Id);
         }
     }
 }

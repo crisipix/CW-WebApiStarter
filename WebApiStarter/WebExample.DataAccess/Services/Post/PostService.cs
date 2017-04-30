@@ -18,10 +18,7 @@ namespace WebExample.DataAccess.Services.Post
         {
             _httpProvider = httpProvider;
         }
-        public bool DeletePost(int Id)
-        {
-            throw new NotImplementedException();
-        }
+      
 
         public async Task<IEnumerable<PostModel>> GetPosts()
         {
@@ -47,9 +44,20 @@ namespace WebExample.DataAccess.Services.Post
             return insertedPost;
         }
 
-        public PostModel UpdatePost(PostModel post)
+        public async Task<PostModel> UpdatePost(PostModel post)
         {
-            throw new NotImplementedException();
+            var client = _httpProvider.ProvideClient("https://jsonplaceholder.typicode.com", false);
+            var url = $"posts";
+            var updatedPost = await client.PostGenericAsync(url, post);
+            return updatedPost;
+        }
+
+        public async Task<bool> DeletePost(int Id)
+        {
+            var client = _httpProvider.ProvideClient("https://jsonplaceholder.typicode.com", false);
+            var url = $"posts/{Id}";
+            var deleted = await client.DeleteJsonAsync(url);
+            return deleted;
         }
     }
 }
