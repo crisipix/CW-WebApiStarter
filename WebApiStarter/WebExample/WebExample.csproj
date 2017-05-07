@@ -161,7 +161,7 @@
     <Compile Include="App_Start\AutoFacServiceConfig.cs" />
     <Compile Include="App_Start\AutoMapperConfig.cs" />
     <Compile Include="Common\DIModules\AutoMapperModule.cs" />
-    <Compile Include="Common\Profiles\AutoMapperProfile.cs" />
+    <Compile Include="Common\Profiles\ModelMapperProfile.cs" />
     <Compile Include="App_Start\DIServiceConfig.cs" />
     <Compile Include="Common\DIModules\LoggingModule.cs" />
     <Compile Include="App_Start\SwaggerConfig.cs" />

@@ -38,7 +38,7 @@ namespace WebExample.DataAccess.Services.Person
         public PersonModel InsertPerson(PersonModel person) {
             var personDo = _mapper.Map<PersonModel, PersonDo>(person);
             personDo =  _repository.Insert(personDo);
-            return Mapper.Map<PersonDo, PersonModel>(personDo);
+            return _mapper.Map<PersonDo, PersonModel>(personDo);
         }
 
         public PersonModel UpdatePerson(PersonModel person) {

@@ -29,7 +29,7 @@ namespace WebExample.App_Start
             builder.RegisterType<PersonRepository>().As<BaseRepository<PersonDo>>();
             builder.RegisterType<AccountRepository>().As<BaseRepository<AccountDo>>();
 
-            // Module Registrations
+            // Module Registrations for log4net and AutoMapper
             builder.RegisterModule(new LoggingModule());
             builder.RegisterModule(new AutoMapperModule());
 

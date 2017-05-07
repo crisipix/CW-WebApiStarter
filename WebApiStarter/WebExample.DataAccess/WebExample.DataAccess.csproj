@@ -61,6 +61,7 @@
     <Compile Include="Common\HttpClientExtensions.cs" />
     <Compile Include="Common\HttpClientProvider.cs" />
     <Compile Include="Common\IHttpClientProvider.cs" />
+    <Compile Include="Mappers\DataObjectProfile.cs" />
     <Compile Include="Models\AccountModel.cs" />
     <Compile Include="Models\PersonModel.cs" />
     <Compile Include="Models\PostModel.cs" />
