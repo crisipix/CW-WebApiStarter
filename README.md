@@ -23,3 +23,5 @@
 * [Elmah Site](http://elmah.github.io/downloads/)
 * [Elmah SQL server ](http://www.andyfrench.info/2014/07/configuring-elmah-to-use-sql-server.html)
 * [Elmah Securing Error Log Pages](https://elmah.github.io/a/securing-error-log-pages/)
+* [Tests UOW](http://techbrij.com/generic-repository-unit-of-work-entity-framework-unit-testing-asp-net-mvc)
+* [Moq](https://codereview.stackexchange.com/questions/122010/service-repository-pattern-with-ioc-npoco-micro-orm-and-unit-tests)
