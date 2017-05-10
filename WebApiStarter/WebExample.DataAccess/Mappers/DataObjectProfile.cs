@@ -9,6 +9,12 @@ using WebExample.DataAccess.Repositories.Dos;
 
 namespace WebExample.DataAccess.Mappers
 {
+    /// <summary>
+    /// This DataObjectMapper profile needs to be added manually by type or instance within 
+    /// the AutoMapperModule.
+    /// Unless a AutoMapperModule is added per project and registerd in the DIService AutoFacServiceConfig 
+    /// class. So creata  DataAccessAutoMapperModule and register in the DIModule
+    /// </summary>
     public class DataObjectProfile : Profile
     {
         public DataObjectProfile()
