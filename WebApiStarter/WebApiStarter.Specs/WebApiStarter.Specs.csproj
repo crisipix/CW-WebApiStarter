@@ -73,6 +73,7 @@
     <Compile Include="Common\TestBase.cs" />
     <Compile Include="AccountServiceSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\StoreRepositorySpecs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

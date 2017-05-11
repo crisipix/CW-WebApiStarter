@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
@@ -33,10 +34,17 @@ namespace WebApiStarter.Specs.Common
 
         public TestBase()
         {
+            // direct access to the db
+            //db = new SqlConnection(ConnectionString);
+            scope = new TransactionScope();
+            
             var builder = new ContainerBuilder();
 
             // builder.RegisterModule(new TModule());
             AutoFacServiceConfig.RegisterServices(builder);
+
+            builder.Register(c => new SqlConnection(ConnectionString)).As<IDbConnection>().InstancePerLifetimeScope();
+
             container = builder.Build();
         }
 
@@ -44,20 +52,14 @@ namespace WebApiStarter.Specs.Common
         [TestInitialize]
         public void BeforeEachTest()
         {
-            // direct access to the db
-            db = new SqlConnection(ConnectionString);
-
-            scope = new TransactionScope();
-
-            // going through the repo
-            //c = new DapperUserRepositoryTestContext();
+           
         }
         // after each test
         [TestCleanup]
         public void AfterEachTest()
         {
             scope.Dispose();
-            db.Dispose();
+            //db.Dispose();
         }
 
         protected TEntity Resolve<TEntity>()

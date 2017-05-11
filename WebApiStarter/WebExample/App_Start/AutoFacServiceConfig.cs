@@ -10,6 +10,7 @@ using WebExample.DataAccess.Services.Person;
 using WebExample.Common.DIModules;
 using WebExample.DataAccess.Common;
 using WebExample.DataAccess.Services.Post;
+using WebExample.DataAccess.Services.Store;
 
 namespace WebExample.App_Start
 {
@@ -22,12 +23,14 @@ namespace WebExample.App_Start
             builder.RegisterType<AccountService>().As<IAccountService>();
             builder.RegisterType<PersonService>().As<IPersonService>();
             builder.RegisterType<PostService>().As<IPostService>();
+            builder.RegisterType<StoreService>().As<IStoreService>();
             
             builder.RegisterGeneric(typeof(BaseRepository<>)).As(typeof(IBaseRepository<>)).InstancePerDependency();
 
             //builder.RegisterGeneric(typeof(BaseRepository<>)).AsSelf();
             builder.RegisterType<PersonRepository>().As<BaseRepository<PersonDo>>();
             builder.RegisterType<AccountRepository>().As<BaseRepository<AccountDo>>();
+            builder.RegisterType<StoreRepository>().As<BaseRepository<StoreDo>>();
 
             // Module Registrations for log4net and AutoMapper
             builder.RegisterModule(new LoggingModule());
