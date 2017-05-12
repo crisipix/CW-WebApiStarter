@@ -42,7 +42,7 @@ namespace WebExample.DataAccess.Common
             return JsonConvert.DeserializeObject<T>(jsonString);
         }
 
-        public static async Task<string> PostJsonAsync(this HttpClient client, string url, Object postObject) {
+        public static async Task<string> PostJsonAsync<T>(this HttpClient client, string url, T postObject) {
             var content = new StringContent(JObject.FromObject(postObject).ToString(), Encoding.UTF8, "application/json");
             HttpResponseMessage response = await client.PostAsync(url, content);
 
@@ -59,6 +59,36 @@ namespace WebExample.DataAccess.Common
         {
             var jsonString = await PostJsonAsync(client, url, postObject);
             return JsonConvert.DeserializeObject<T>(jsonString);
+        }
+        public static async Task<TResult> PostGenericAsync<T,TResult>(this HttpClient client, string url, T postObject)
+        {
+            var jsonString = await PostJsonAsync(client, url, postObject);
+            return JsonConvert.DeserializeObject<TResult>(jsonString);
+        }
+
+        public static async Task<string> PutJsonAsync<T>(this HttpClient client, string url, T postObject)
+        {
+            var content = new StringContent(JObject.FromObject(postObject).ToString(), Encoding.UTF8, "application/json");
+            HttpResponseMessage response = await client.PutAsync(url, content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var jsonString = await response.Content.ReadAsStringAsync();
+                return jsonString;
+            }
+            response.EnsureSuccessStatusCode();
+            return string.Empty;
+        }
+
+        public static async Task<T> PutGenericAsync<T>(this HttpClient client, string url, T postObject)
+        {
+            var jsonString = await PutJsonAsync(client, url, postObject);
+            return JsonConvert.DeserializeObject<T>(jsonString);
+        }
+        public static async Task<TResult> PutGenericAsync<T, TResult>(this HttpClient client, string url, T postObject)
+        {
+            var jsonString = await PutJsonAsync(client, url, postObject);
+            return JsonConvert.DeserializeObject<TResult>(jsonString);
         }
 
         public static async Task<bool> DeleteJsonAsync(this HttpClient client, string url)

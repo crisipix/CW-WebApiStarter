@@ -25,6 +25,7 @@ namespace WebApiStarter.Specs.Common
 
             Rollback sql
             http://www.programgood.net/2016/04/27/IntegrationTestingWithDapper.aspx
+            http://stackoverflow.com/questions/3537972/doing-a-rollback-repository-integration-tests
         */
         private IContainer container;
         // direct access to the db

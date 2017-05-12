@@ -47,8 +47,8 @@ namespace WebExample.DataAccess.Services.Post
         public async Task<PostModel> UpdatePost(PostModel post)
         {
             var client = _httpProvider.ProvideClient("https://jsonplaceholder.typicode.com", false);
-            var url = $"posts";
-            var updatedPost = await client.PostGenericAsync(url, post);
+            var url = $"posts/{post.Id}";
+            var updatedPost = await client.PutGenericAsync(url, post);
             return updatedPost;
         }
 
