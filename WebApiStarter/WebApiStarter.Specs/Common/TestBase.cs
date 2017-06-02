@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Transactions;
 using WebExample.App_Start;
+using WebExample.DataAccess.Configs;
 
 namespace WebApiStarter.Specs.Common
 {
@@ -43,6 +44,7 @@ namespace WebApiStarter.Specs.Common
 
             // builder.RegisterModule(new TModule());
             AutoFacServiceConfig.RegisterServices(builder);
+            DataAccessServiceConfig.RegisterServices(builder);
 
             builder.Register(c => new SqlConnection(ConnectionString)).As<IDbConnection>().InstancePerLifetimeScope();
 

@@ -5,7 +5,7 @@ using System.Web;
 
 namespace WebExample.DataAccess.Models
 {
-    public class AccountModel
+    public class AccountModel: IRecordPermission
     {
         public AccountModel() {
             Owner = new PersonModel();      
@@ -14,5 +14,6 @@ namespace WebExample.DataAccess.Models
         public string Code { get; set; }
         //public int OwnerId { get; set; }
         public PersonModel Owner { get; set; }
+        public string Identifier { get; set; }
     }
 }

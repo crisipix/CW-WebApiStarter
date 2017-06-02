@@ -12,7 +12,7 @@ namespace WebExample.Controllers
 {
 
     [RoutePrefix("api/Account")]
-    public class AccountController : ApiController
+    public class AccountController : BaseController
     { 
         //private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         private readonly ILog _log;

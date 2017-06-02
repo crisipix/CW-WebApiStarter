@@ -20,9 +20,11 @@ namespace WebExample.App_Start
             Mapper.Initialize((config) =>
             {
                 config.CreateMap<PersonDo, PersonModel>().ReverseMap();
-                config.CreateMap<AccountDo, AccountModel>();
-                config.CreateMap<AccountModel, AccountDo>()
-                      .ForMember(dest => dest.OwnerId, opt => opt.MapFrom(src => src.Owner.Id));
+
+                config.CreateMap<AccountDo, AccountModel>()
+                        .ForMember(dest => dest.Identifier, opt => opt.MapFrom(src => src.Code));
+
+      
 
                 //config.CreateMap<AccountDo, AccountModel>()
                 //    .ForMember(dest => dest.Owner.Id, opts => opts.MapFrom(src => src.OwnerId));

@@ -161,6 +161,7 @@
     <Compile Include="App_Start\AutoFacServiceConfig.cs" />
     <Compile Include="App_Start\AutoMapperConfig.cs" />
     <Compile Include="Common\DIModules\AutoMapperModule.cs" />
+    <Compile Include="Common\MessageHandlers\MessageLoggingHandler.cs" />
     <Compile Include="Common\Profiles\ModelMapperProfile.cs" />
     <Compile Include="App_Start\DIServiceConfig.cs" />
     <Compile Include="Common\DIModules\LoggingModule.cs" />
@@ -168,6 +169,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Common\Exceptions\ElmahHandleWebApiErrorAttribute.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Controllers\StoreController.cs" />

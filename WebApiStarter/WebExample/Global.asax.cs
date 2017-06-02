@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Http;
 using System.Web.Routing;
 using WebExample.App_Start;
+using WebExample.Common.MessageHandlers;
+
 [assembly: log4net.Config.XmlConfigurator(Watch = true)]
 namespace WebExample
 {
@@ -19,6 +21,7 @@ namespace WebExample
            // AutoMapperConfig.Configure();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             DIServiceConfig.Register();
+            GlobalConfiguration.Configuration.MessageHandlers.Add(new MessageLoggingHandler());
 
             //SwaggerConfig.Register(GlobalConfiguration.Configuration);
             /*

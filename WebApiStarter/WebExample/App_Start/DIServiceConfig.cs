@@ -9,6 +9,7 @@ using System.Linq;
 using System.Reflection;
 using System.Web;
 using System.Web.Http;
+using WebExample.DataAccess.Configs;
 
 namespace WebExample.App_Start
 {
@@ -29,6 +30,7 @@ namespace WebExample.App_Start
             builder.RegisterWebApiFilterProvider(config);
 
             AutoFacServiceConfig.RegisterServices(builder);
+            DataAccessServiceConfig.RegisterServices(builder);
             builder.Register(c => new SqlConnection(ConnectionString)).As<IDbConnection>().InstancePerLifetimeScope();
 
             // Set the dependency resolver to be Autofac.
