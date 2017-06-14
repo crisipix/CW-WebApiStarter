@@ -170,6 +170,7 @@
     <Compile Include="Common\Exceptions\ElmahHandleWebApiErrorAttribute.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Controllers\StoreController.cs" />

@@ -23,7 +23,8 @@ namespace WebExample.Common.Profiles
             personMapper.ForMember(dest => dest.CanVote, opt => opt.ResolveUsing(p => p.Age >= 18));
             CreateMap<AccountDo, AccountModel>();
             CreateMap<StoreDo, StoreModel>();
-           
+            CreateMap<FileDo, FileModel>();
+
         }
     }
 }

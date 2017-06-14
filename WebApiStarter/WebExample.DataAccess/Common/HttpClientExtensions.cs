@@ -3,6 +3,7 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ namespace WebExample.DataAccess.Common
 {
     public static class HttpClientExtensions
     {
+        private static readonly log4net.ILog _logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         public static async Task<string> GetJsonAsync(this HttpClient client, string url)
         {
             HttpResponseMessage response = await client.GetAsync(url);
@@ -102,6 +104,28 @@ namespace WebExample.DataAccess.Common
             }
             response.EnsureSuccessStatusCode();
             return false;
+        }
+
+
+        //https://stackoverflow.com/questions/12519561/throw-httpresponseexception-or-return-request-createerrorresponse
+        private static void HandleResponseException(Exception ex, string resourcePath) {
+            _logger.Error($"Error Calling : {resourcePath}");
+            if (ex is TaskCanceledException)
+            {
+                throw new ApplicationException($"Request Timed Out : {resourcePath}");
+            }
+            if (ex is HttpRequestException)
+            {
+                if (ex.InnerException != null && ex.InnerException is WebException  ) {
+                    var we = ex.InnerException;
+                    if (we.Message.StartsWith("Server")) {
+                        throw new ApplicationException($"Request Server Down : {resourcePath}");
+                    }
+                    
+                }
+            }
+
+
         }
     }
 }

@@ -26,6 +26,7 @@ namespace WebExample.DataAccess.Mappers
             //personDoMapper.ForMember(dest => dest, opt => opt.Ignore());
 
             var storeDoMapper = CreateMap<StoreModel, StoreDo>();
+            var fileDoMapper = CreateMap<FileModel, FileDo>();
 
         }
     }

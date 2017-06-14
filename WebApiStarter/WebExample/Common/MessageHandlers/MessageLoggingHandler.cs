@@ -18,6 +18,10 @@ namespace WebExample.Common.MessageHandlers
 
             var response = await base.SendAsync(request, cancellationToken);
 
+            if (response.StatusCode != System.Net.HttpStatusCode.OK)
+            {
+                return response;
+            }
 
             Type originalType;
             if (response.Content is ObjectContent)

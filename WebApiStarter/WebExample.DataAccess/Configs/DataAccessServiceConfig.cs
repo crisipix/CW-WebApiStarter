@@ -8,6 +8,7 @@ using WebExample.DataAccess.Common;
 using WebExample.DataAccess.Repositories;
 using WebExample.DataAccess.Repositories.Dos;
 using WebExample.DataAccess.Services.Account;
+using WebExample.DataAccess.Services.File;
 using WebExample.DataAccess.Services.Person;
 using WebExample.DataAccess.Services.Post;
 using WebExample.DataAccess.Services.Store;
@@ -25,6 +26,7 @@ namespace WebExample.DataAccess.Configs
             builder.RegisterType<PersonService>().As<IPersonService>();
             builder.RegisterType<PostService>().As<IPostService>();
             builder.RegisterType<StoreService>().As<IStoreService>();
+            builder.RegisterType<FileService>().As<IFileService>();
 
             builder.RegisterGeneric(typeof(BaseRepository<>)).As(typeof(IBaseRepository<>)).InstancePerDependency();
 
@@ -32,7 +34,9 @@ namespace WebExample.DataAccess.Configs
             builder.RegisterType<PersonRepository>().As<BaseRepository<PersonDo>>();
             builder.RegisterType<AccountRepository>().As<BaseRepository<AccountDo>>();
             builder.RegisterType<StoreRepository>().As<BaseRepository<StoreDo>>();
-
+            //builder.RegisterType<FileRepository>().As<BaseRepository<FileDo>>();
+            builder.RegisterType<FileRepository>().As<IFileRepository>();
+            
             // Module Registrations for log4net and AutoMapper
             //builder.RegisterModule(new LoggingModule());
             //builder.RegisterModule(new AutoMapperModule());

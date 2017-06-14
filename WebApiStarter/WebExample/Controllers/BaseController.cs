@@ -34,6 +34,9 @@ namespace WebExample.Controllers
 
             var response = await base.ExecuteAsync(controllerContext, cancellationToken);
 
+            if (response.StatusCode != System.Net.HttpStatusCode.OK) {
+                return response;
+            }
             Type originalType;
             if (response.Content is ObjectContent)
             {
