@@ -1,0 +1,83 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>WebExample.DataAccess</Name>
+    <Description>&lt;No description available&gt;</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>WebExample.DataAccess</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="WebExample.DataAccess.csproj" File="WebExample.DataAccess.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="Class1.cs">Class1.cs</ProjectItem>
+      <Folder Name="Common" TargetFolderName="Common">
+        <ProjectItem ReplaceParameters="true" TargetFileName="HttpClientExtensions.cs">HttpClientExtensions.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="HttpClientProvider.cs">HttpClientProvider.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IHttpClientProvider.cs">IHttpClientProvider.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Configs" TargetFolderName="Configs">
+        <ProjectItem ReplaceParameters="true" TargetFileName="DataAccessServiceConfig.cs">DataAccessServiceConfig.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Mappers" TargetFolderName="Mappers">
+        <ProjectItem ReplaceParameters="true" TargetFileName="DataObjectProfile.cs">DataObjectProfile.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ModelMapperProfile.cs">ModelMapperProfile.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Models" TargetFolderName="Models">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AccountModel.cs">AccountModel.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="FileModel.cs">FileModel.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IRecordPermission.cs">IRecordPermission.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="PersonModel.cs">PersonModel.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="PostModel.cs">PostModel.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="StoreModel.cs">StoreModel.cs</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="packages.config">packages.config</ProjectItem>
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Repositories" TargetFolderName="Repositories">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AccountRepository.cs">AccountRepository.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="BaseRepository.cs">BaseRepository.cs</ProjectItem>
+        <Folder Name="Dos" TargetFolderName="Dos">
+          <ProjectItem ReplaceParameters="true" TargetFileName="AccountDo.cs">AccountDo.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="FileDo.cs">FileDo.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="PersonDo.cs">PersonDo.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="StoreDo.cs">StoreDo.cs</ProjectItem>
+        </Folder>
+        <ProjectItem ReplaceParameters="true" TargetFileName="FileRepository.cs">FileRepository.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IBaseRepository.cs">IBaseRepository.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IFileRepository.cs">IFileRepository.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="PersonRepository.cs">PersonRepository.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="StoreRepository.cs">StoreRepository.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Services" TargetFolderName="Services">
+        <Folder Name="Account" TargetFolderName="Account">
+          <ProjectItem ReplaceParameters="true" TargetFileName="AccountService.cs">AccountService.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="IAccountService.cs">IAccountService.cs</ProjectItem>
+        </Folder>
+        <Folder Name="File" TargetFolderName="File">
+          <ProjectItem ReplaceParameters="true" TargetFileName="FileService.cs">FileService.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="IFileService.cs">IFileService.cs</ProjectItem>
+        </Folder>
+        <Folder Name="Person" TargetFolderName="Person">
+          <ProjectItem ReplaceParameters="true" TargetFileName="IPersonService.cs">IPersonService.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="PersonService.cs">PersonService.cs</ProjectItem>
+        </Folder>
+        <Folder Name="Post" TargetFolderName="Post">
+          <ProjectItem ReplaceParameters="true" TargetFileName="IPostService.cs">IPostService.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="PostService.cs">PostService.cs</ProjectItem>
+        </Folder>
+        <Folder Name="Store" TargetFolderName="Store">
+          <ProjectItem ReplaceParameters="true" TargetFileName="IStoreService.cs">IStoreService.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="StoreService.cs">StoreService.cs</ProjectItem>
+        </Folder>
+      </Folder>
+      <Folder Name="Utils" TargetFolderName="Utils" />
+    </Project>
+  </TemplateContent>
+</VSTemplate>

@@ -1,0 +1,61 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>WebExample</Name>
+    <Description>&lt;No description available&gt;</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>WebExample</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="WebExample.csproj" File="WebExample.csproj" ReplaceParameters="true">
+      <Folder Name="App_Data" TargetFolderName="App_Data" />
+      <Folder Name="App_Readme" TargetFolderName="App_Readme">
+        <ProjectItem ReplaceParameters="true" TargetFileName="Elmah.txt">Elmah.txt</ProjectItem>
+      </Folder>
+      <Folder Name="App_Start" TargetFolderName="App_Start">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AutoFacServiceConfig.cs">AutoFacServiceConfig.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="DIServiceConfig.cs">DIServiceConfig.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="SwaggerConfig.cs">SwaggerConfig.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="WebApiConfig.cs">WebApiConfig.cs</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="ApplicationInsights.config">ApplicationInsights.config</ProjectItem>
+      <Folder Name="Common" TargetFolderName="Common">
+        <Folder Name="DIModules" TargetFolderName="DIModules">
+          <ProjectItem ReplaceParameters="true" TargetFileName="AutoMapperModule.cs">AutoMapperModule.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="LoggingModule.cs">LoggingModule.cs</ProjectItem>
+        </Folder>
+        <Folder Name="Exceptions" TargetFolderName="Exceptions">
+          <ProjectItem ReplaceParameters="true" TargetFileName="ElmahHandleWebApiErrorAttribute.cs">ElmahHandleWebApiErrorAttribute.cs</ProjectItem>
+        </Folder>
+        <Folder Name="MessageHandlers" TargetFolderName="MessageHandlers">
+          <ProjectItem ReplaceParameters="true" TargetFileName="MessageLoggingHandler.cs">MessageLoggingHandler.cs</ProjectItem>
+        </Folder>
+      </Folder>
+      <Folder Name="Controllers" TargetFolderName="Controllers">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AccountController.cs">AccountController.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="BaseController.cs">BaseController.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="FileController.cs">FileController.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="PersonController.cs">PersonController.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="PostController.cs">PostController.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="StoreController.cs">StoreController.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="UserController.cs">UserController.cs</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Global.asax">Global.asax</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Global.asax.cs">Global.asax.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="packages.config">packages.config</ProjectItem>
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.Debug.config">Web.Debug.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.Release.config">Web.Release.config</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

@@ -1,0 +1,35 @@
+ <VSTemplate Version="3.0.0" Type="ProjectGroup" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>WebAPI Sample Template</Name>
+    <Description>WebAPI Sample Solution Template</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>WebAPISample</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>Poke_Ball_icon.png</Icon>
+  </TemplateData>
+  <TemplateContent>
+	<ProjectCollection>
+	 <ProjectTemplateLink ProjectName="$projectname$">
+                WebExample\MyTemplate.vstemplate
+            </ProjectTemplateLink>
+            <ProjectTemplateLink ProjectName="$projectname$.DataAccess">
+                WebExample.DataAccess\MyTemplate.vstemplate
+            </ProjectTemplateLink>
+            <ProjectTemplateLink ProjectName="$projectname$.Common">
+                WebExample.Common\MyTemplate.vstemplate
+            </ProjectTemplateLink>
+			<ProjectTemplateLink ProjectName="$projectname$.SQL">
+                WebExample.SQL\MyTemplate.vstemplate
+            </ProjectTemplateLink>
+			<ProjectTemplateLink ProjectName="$projectname$.Specs">
+                WebExample.Specs\MyTemplate.vstemplate
+            </ProjectTemplateLink>
+        </ProjectCollection>
+  </TemplateContent>
+</VSTemplate>

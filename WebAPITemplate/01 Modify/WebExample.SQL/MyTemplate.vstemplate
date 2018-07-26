@@ -1,0 +1,40 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>WebExample.SQL</Name>
+    <Description>&lt;No description available&gt;</Description>
+    <ProjectType>SQLDB</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>WebExample.SQL</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <CreateInPlace>true</CreateInPlace>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="WebExample.SQL.sqlproj" File="WebExample.SQL.sqlproj" ReplaceParameters="true">
+      <Folder Name="Properties" TargetFolderName="Properties" />
+      <Folder Name="dbo" TargetFolderName="dbo">
+        <Folder Name="Stored Procedures" TargetFolderName="Stored Procedures">
+          <ProjectItem ReplaceParameters="true" TargetFileName="ELMAH_GetErrorsXml.sql">ELMAH_GetErrorsXml.sql</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="ELMAH_GetErrorXml.sql">ELMAH_GetErrorXml.sql</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="ELMAH_LogError.sql">ELMAH_LogError.sql</ProjectItem>
+        </Folder>
+        <Folder Name="Tables" TargetFolderName="Tables">
+          <ProjectItem ReplaceParameters="true" TargetFileName="Account.sql">Account.sql</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="ELMAH_Error.sql">ELMAH_Error.sql</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Person.sql">Person.sql</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Store.sql">Store.sql</ProjectItem>
+        </Folder>
+      </Folder>
+      <Folder Name="MigrationScripts" TargetFolderName="MigrationScripts">
+        <ProjectItem ReplaceParameters="true" TargetFileName="ElmahSetup.sql">ElmahSetup.sql</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="MIgrationScript.sql">MIgrationScript.sql</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="false" TargetFileName="WebExample.Compare.scmp">WebExample.Compare.scmp</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>
