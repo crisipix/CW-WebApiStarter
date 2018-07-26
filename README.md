@@ -28,3 +28,6 @@
 
 
 Update-Package -Reinstall
+
+File 'App_Start\SwaggerConfig.cs' already exists in project 'WebAPISample._____'. Do you want to overwrite it?
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [?] Help (default is "N"):y
