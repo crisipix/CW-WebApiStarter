@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WebApiStarter.Specs.Common;
+using WebExample.Specs.Common;
 using WebExample.DataAccess.Repositories;
 using WebExample.DataAccess.Repositories.Dos;
 
-namespace WebApiStarter.Specs.Repository
+namespace WebExample.Specs.Repository
 {
 
     [TestClass]

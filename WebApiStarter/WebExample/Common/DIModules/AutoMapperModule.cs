@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using WebExample.Common.Profiles;
 using WebExample.DataAccess.Mappers;
 
 namespace WebExample.Common.DIModules
@@ -24,6 +23,7 @@ namespace WebExample.Common.DIModules
                     cfg.AddProfile(profile);
                 }
                 cfg.AddProfile(typeof(DataObjectProfile));
+                cfg.AddProfile(typeof(ModelMapperProfile));
             }))
             .AsSelf()
             .SingleInstance();

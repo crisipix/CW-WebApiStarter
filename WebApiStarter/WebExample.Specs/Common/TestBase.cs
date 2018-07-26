@@ -13,7 +13,7 @@ using System.Transactions;
 using WebExample.App_Start;
 using WebExample.DataAccess.Configs;
 
-namespace WebApiStarter.Specs.Common
+namespace WebExample.Specs.Common
 {
     [TestClass]
     public abstract class TestBase

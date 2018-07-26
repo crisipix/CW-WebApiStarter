@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WebApiStarter.Specs.Common;
+using WebExample.Specs.Common;
 using WebExample.DataAccess.Models;
 using WebExample.DataAccess.Services.Person;
 
-namespace WebApiStarter.Specs.Servicce
+namespace WebExample.Specs.Servicce
 {
     [TestClass]
     public class PersonServiceSpecs : TestBase

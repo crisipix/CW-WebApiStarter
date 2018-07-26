@@ -24,23 +24,6 @@ namespace WebExample.Controllers
             _log = log;
         }
 
-        //[HttpGet]
-        //[Route("")]
-        //public async Task<IEnumerable<FileModel>> GetAccounts()
-        //{
-        //    _log.Debug("GET Accounts");
-        //    return await Task.Run(() => _service.GetAccounts());
-        //}
-
-        //[HttpGet]
-        //[Route("Id")]
-        //public async Task<FileModel> GetAccount(int id)
-        //{
-        //    _log.Debug("GET Account by id");
-        //    return await Task.Run(() => { return _service.GetAccountById(id); });
-        //}
-
-
         [HttpPost]
         [Route("Upload")]
         public async Task<FileModel> Upload()
@@ -77,22 +60,6 @@ namespace WebExample.Controllers
 
         }
 
-        //[HttpPost]
-        //[Route("Update")]
-        //public async Task<FileModel> UpdatePerson(FileModel person)
-        //{
-        //    _log.Debug("Update Person");
-
-        //    return await Task.Run(() => _service.UpdateAccount(person));
-        //}
-
-        //[HttpDelete]
-        //public async Task<bool> UpdatePerson(int Id)
-        //{
-        //    _log.Debug("Delete Person");
-
-        //    return await Task.Run(() => _service.DeleteAccount(Id));
-        //}
-
+     
     }
 }

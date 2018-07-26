@@ -36,10 +36,6 @@ namespace WebExample.DataAccess.Configs
             builder.RegisterType<StoreRepository>().As<BaseRepository<StoreDo>>();
             //builder.RegisterType<FileRepository>().As<BaseRepository<FileDo>>();
             builder.RegisterType<FileRepository>().As<IFileRepository>();
-            
-            // Module Registrations for log4net and AutoMapper
-            //builder.RegisterModule(new LoggingModule());
-            //builder.RegisterModule(new AutoMapperModule());
 
             // Provider
             builder.RegisterType<HttpClientProvider>().As<IHttpClientProvider>();

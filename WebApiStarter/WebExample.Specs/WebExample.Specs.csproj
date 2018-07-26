@@ -6,8 +6,8 @@
     <ProjectGuid>{0D456276-5370-4F8D-A098-39EE9389163D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WebApiStarter.Specs</RootNamespace>
-    <AssemblyName>WebApiStarter.Specs</AssemblyName>
+    <RootNamespace>WebExample.Specs</RootNamespace>
+    <AssemblyName>WebExample.Specs</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

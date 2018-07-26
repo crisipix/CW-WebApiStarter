@@ -1,11 +1,11 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using WebApiStarter.Specs.Common;
+using WebExample.Specs.Common;
 using WebExample.DataAccess.Services.Account;
 using System.Linq;
 using WebExample.DataAccess.Models;
 
-namespace WebApiStarter.Specs
+namespace WebExample.Specs
 {
     [TestClass]
     public class AccountServiceSpecs : TestBase

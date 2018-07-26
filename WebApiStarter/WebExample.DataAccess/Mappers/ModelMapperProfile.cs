@@ -2,11 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 using WebExample.DataAccess.Models;
 using WebExample.DataAccess.Repositories.Dos;
 
-namespace WebExample.Common.Profiles
+namespace WebExample.DataAccess.Mappers
 {
     /// <summary>
     /// This profile should be automatically picked up by the AutoMapperModule
