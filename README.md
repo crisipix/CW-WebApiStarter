@@ -31,3 +31,8 @@ Update-Package -Reinstall
 
 File 'App_Start\SwaggerConfig.cs' already exists in project 'WebAPISample._____'. Do you want to overwrite it?
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [?] Help (default is "N"):y
+
+Update Project set the start page to be
+swagger/ui/index
+
+Update Specs by replaceing WebExample with ProjectName in whole project and updating the references to be ProjectName.dll and ProjectName.DataAccess.dll
