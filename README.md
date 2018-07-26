@@ -25,3 +25,14 @@
 * [Elmah Securing Error Log Pages](https://elmah.github.io/a/securing-error-log-pages/)
 * [Tests UOW](http://techbrij.com/generic-repository-unit-of-work-entity-framework-unit-testing-asp-net-mvc)
 * [Moq](https://codereview.stackexchange.com/questions/122010/service-repository-pattern-with-ioc-npoco-micro-orm-and-unit-tests)
+
+
+Update-Package -Reinstall
+
+File 'App_Start\SwaggerConfig.cs' already exists in project 'WebAPISample._____'. Do you want to overwrite it?
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [?] Help (default is "N"):y
+
+Update Project set the start page to be
+swagger/ui/index
+
+Update Specs by replaceing WebExample with ProjectName in whole project and updating the references to be ProjectName.dll and ProjectName.DataAccess.dll
